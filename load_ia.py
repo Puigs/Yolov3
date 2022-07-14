@@ -154,12 +154,15 @@ class WeightReader:
  
 	def reset(self):
 		self.offset = 0
- 
-# define the model
-model = make_yolov3_model()
-# load the model weights
-weight_reader = WeightReader('yolov3.weights')
-# set the model weights into the model
-weight_reader.load_weights(model)
-# save the model to file
-model.save('model.h5')
+def main():
+	# define the model
+	model = make_yolov3_model()
+	# load the model weights
+	weight_reader = WeightReader('yolov3.weights')
+	# set the model weights into the model
+	weight_reader.load_weights(model)
+	# save the model to file
+	model.save('model.h5')
+
+if __name__ == "__main__":
+    main()
